@@ -1,1 +1,1 @@
-rootProject.name = "YoshisIslandProgressBar"
+rootProject.name = "Yoshi's Island Progress Bar"

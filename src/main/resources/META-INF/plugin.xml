@@ -1,19 +1,15 @@
 <idea-plugin>
     <id>com.github.actualkwarter.yoshisislandprogressbar</id>
-    <name>YoshisIslandProgressBar</name>
+    <name>Yoshi's Island Progress Bar</name>
     <vendor>actual-kwarter</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.actualkwarter.yoshisislandprogressbar.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.actualkwarter.yoshisislandprogressbar.services.MyProjectService"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.actualkwarter.yoshisislandprogressbar.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <application-components>
+        <component>
+            <implementation-class>ApplicationComponent</implementation-class>
+        </component>
+    </application-components>
 </idea-plugin>
