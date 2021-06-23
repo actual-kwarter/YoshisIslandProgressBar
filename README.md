@@ -2,13 +2,12 @@
 
 The Yoshi's Island progress bar for IntelliJ IDEA and other JetBrains IDEs.
 
-[![Version](https://img.shields.io/jetbrains/plugin/v/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
-[![Rating](https://img.shields.io/jetbrains/plugin/r/rating/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/reviews)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar)
+[![Version](https://img.shields.io/jetbrains/plugin/v/17115-yoshi-s-island-progress-bar)](https://plugins.jetbrains.com/plugin/17115-yoshi-s-island-progress-bar/versions)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/17115-yoshi-s-island-progress-bar)](https://plugins.jetbrains.com/plugin/17115-yoshi-s-island-progress-bar)
 
-![MarioDeterminateBar](https://i.imgur.com/3ry0GOy.gif)
+![YoshiDeterminateBar](https://i.imgur.com/E7v35Fi.gif)
 
-![MarioIndeterminateBar](https://i.imgur.com/fdUDmZI.gif)
+![PenguinIndeterminateBar](https://i.imgur.com/eT2fIsq.gif)
 
 <!-- Plugin description -->
 This is the [Yoshi's Island Progress Bar](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
