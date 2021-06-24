@@ -106,7 +106,7 @@ public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
             g.fill(area);
         }
         area.subtract(new Area(new RoundRectangle2D.Float(0, 0, w, h, R2, R2)));
-        Container parent = c.getParent();
+
         if (c.isOpaque()) {
             g.fill(area);
         }
@@ -136,6 +136,7 @@ public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
             super.paintDeterminate(g, c);
             return;
         }
+
         final GraphicsConfig config = GraphicsUtil.setupAAPainting(g);
         Insets b = progressBar.getInsets(); // area for border
         int w = progressBar.getWidth();
@@ -155,9 +156,9 @@ public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
             g.fillRect(0, 0, w, h);
         }
 
-        final float R = JBUI.scale(8f);
-        final float R2 = JBUI.scale(9f);
-        final float off = JBUI.scale(1f);
+        final float R = JBUIScale.scale(8f);
+        final float R2 = JBUIScale.scale(9f);
+        final float off = JBUIScale.scale(1f);
         g2.translate(0, (c.getHeight() - h) / 2);
         g2.setColor(progressBar.getForeground());
         g2.fill(new RoundRectangle2D.Float(0, 0, w - off, h - off, R2, R2));

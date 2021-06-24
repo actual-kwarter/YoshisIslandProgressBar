@@ -2,11 +2,11 @@
 
 # Yoshi's Island Progress Bar Changelog
 
-## [1.1.0] - 2021-06-24
+## [1.1.0] - 2021-06-25
 ### Fixed
 - Replaced usage of deprecated methods
-- Updated `plugin.xml`
 - Corrected small animation issue with penguin
+- Updated `plugin.xml`
 
 ## [1.0.0] - 2021-06-23
 ### Added
