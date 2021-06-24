@@ -1,7 +1,14 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# YoshisIslandProgressBar Changelog
+# Yoshi's Island Progress Bar Changelog
 
-## [Unreleased]
+## [1.1.0] - 2021-06-24
+### Fixed
+- Replaced usage of deprecated methods
+- Updated `plugin.xml`
+- Corrected small animation issue with penguin
+
+## [1.0.0] - 2021-06-23
 ### Added
+- Created the Yoshi's Island Progress Bar
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)

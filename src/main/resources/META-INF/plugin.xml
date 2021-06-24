@@ -1,15 +1,32 @@
 <idea-plugin>
     <id>com.github.actualkwarter.yoshisislandprogressbar</id>
     <name>Yoshi's Island Progress Bar</name>
+    <version>1.1</version>
     <vendor>actual-kwarter</vendor>
+
+    <description><![CDATA[
+        This is the [Yoshi's Island Progress Bar](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
+        for [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/) based on the Nyan Progress Bar by Dmitry Batkovitch. It
+        displays Yoshi walking with a dirt block background for the basic bar, and a spinning penguin for indeterminate tasks.
+        <br>
+        <br>
+        DETERMINATE:
+        <br>
+        <img src="https://i.imgur.com/E7v35Fi.gif" title="YoshisIslandDeterminateBar" />
+        <br>
+        INDETERMINATE:
+        <br>
+        <img src="https://i.imgur.com/eT2fIsq.gif" title="YoshisIslandIndeterminateBar" />
+    ]]></description>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <application-components>
-        <component>
-            <implementation-class>ApplicationComponent</implementation-class>
-        </component>
-    </application-components>
+    <applicationListeners>
+        <listener class="YoshisIslandProgressBarListener"
+                  topic="com.intellij.ide.ui.LafManagerListener"/>
+        <listener class="YoshisIslandProgressBarListener"
+                  topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+    </applicationListeners>
 </idea-plugin>

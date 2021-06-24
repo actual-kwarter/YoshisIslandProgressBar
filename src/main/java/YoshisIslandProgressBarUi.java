@@ -1,6 +1,7 @@
 import com.intellij.openapi.ui.GraphicsConfig;
 import com.intellij.ui.Gray;
 import com.intellij.ui.JBColor;
+import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
@@ -20,12 +21,12 @@ import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class ProgressBarUi extends BasicProgressBarUI {
-    BufferedImage bimage = null;
+public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
+    BufferedImage bufferedImage = null;
 
-    public ProgressBarUi() {
+    public YoshisIslandProgressBarUi() {
         try {
-            bimage = ImageIO.read(this.getClass().getResource("/dirt.png"));
+            bufferedImage = ImageIO.read(this.getClass().getResource("/dirt.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,7 +35,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
     public static ComponentUI createUI(JComponent c) {
         c.setBorder(JBUI.Borders.empty().asUIResource());
-        return new ProgressBarUi();
+        return new YoshisIslandProgressBarUi();
     }
 
     @Override
@@ -77,7 +78,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
         g.setColor(new JBColor(Gray._240.withAlpha(50), Gray._128.withAlpha(50)));
         int w = c.getWidth();
         int h = c.getPreferredSize().height;
-        if (!isEven(c.getHeight() - h)) h++;
+        if (isOdd(c.getHeight() - h)) h++;
         if (c.isOpaque()) {
             g.fillRect(0, (c.getHeight() - h) / 2, w, h);
         }
@@ -86,8 +87,8 @@ public class ProgressBarUi extends BasicProgressBarUI {
         g.translate(0, (c.getHeight() - h) / 2);
 
         int x = -offset;
-        final float R = JBUI.scale(8f);
-        final float R2 = JBUI.scale(9f);
+        final float R = JBUIScale.scale(8f);
+        final float R2 = JBUIScale.scale(9f);
         final Area containingRoundRect = new Area(new RoundRectangle2D.Float(1f, 1f, w - 2f, h - 2f, R, R));
         g.fill(containingRoundRect);
         offset = (offset + 1) % getPeriodLength();
@@ -110,7 +111,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
             g.fill(area);
         }
 
-        Icons.PENGUIN.paintIcon(progressBar, g, offset2 - JBUI.scale(3), -JBUI.scale(-2));
+        YoshisIslandProgressBarIcons.PENGUIN.paintIcon(progressBar, g, offset2 - JBUI.scale(3), -JBUI.scale(-2));
 
         g.draw(new RoundRectangle2D.Float(1f, 1f, w - 2f - 1f, h - 2f - 1f, R, R));
         g.translate(0, -(c.getHeight() - h) / 2);
@@ -139,7 +140,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
         Insets b = progressBar.getInsets(); // area for border
         int w = progressBar.getWidth();
         int h = progressBar.getPreferredSize().height;
-        if (!isEven(c.getHeight() - h)) h++;
+        if (isOdd(c.getHeight() - h)) h++;
         int barRectWidth = w - (b.right + b.left);
         int barRectHeight = h - (b.top + b.bottom);
         if (barRectWidth <= 0 || barRectHeight <= 0) {
@@ -163,14 +164,21 @@ public class ProgressBarUi extends BasicProgressBarUI {
         g2.setColor(background);
         g2.fill(new RoundRectangle2D.Float(off, off, w - 2f * off - off, h - 2f * off - off, R, R));
 
-        if (bimage != null) {
-            TexturePaint tp = new TexturePaint(bimage, new Rectangle2D.Double(0, 1, h - 2f * off - off, h - 2f * off - off));
+        if (bufferedImage != null) {
+            TexturePaint tp = new TexturePaint(bufferedImage, new Rectangle2D.Double(0, 1, h - 2f * off - off, h - 2f * off - off));
             g2.setPaint(tp);
         }
 
-        g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, amountFull - JBUI.scale(5f), h - JBUI.scale(5f), JBUI.scale(7f), JBUI.scale(7f)));
+        g2.fill(new RoundRectangle2D.Float(
+                2f * off,
+                2f * off,
+                amountFull - JBUIScale.scale(5f),
+                h - JBUIScale.scale(5f),
+                JBUIScale.scale(7f),
+                JBUIScale.scale(7f)
+        ));
 
-        Icons.YOSHI.paintIcon(progressBar, g2, amountFull - JBUI.scale(5), -JBUI.scale(1));
+        YoshisIslandProgressBarIcons.YOSHI.paintIcon(progressBar, g2, amountFull - JBUI.scale(5), -JBUI.scale(1));
         g2.translate(0, -(c.getHeight() - h) / 2);
 
         if (progressBar.isStringPainted()) {
@@ -227,7 +235,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
         return JBUI.scale(16);
     }
 
-    private static boolean isEven(int value) {
-        return value % 2 == 0;
+    private static boolean isOdd(int value) {
+        return value % 2 != 0;
     }
 }
