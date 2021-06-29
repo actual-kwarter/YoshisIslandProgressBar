@@ -10,7 +10,7 @@ The Yoshi's Island progress bar for IntelliJ IDEA and other JetBrains IDEs.
 ![PenguinIndeterminateBar](https://i.imgur.com/eT2fIsq.gif)
 
 <!-- Plugin description -->
-This is the [Yoshi's Island Progress Bar](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
+This is the [Yoshi's Island Progress Bar](https://plugins.jetbrains.com/plugin/17115-yoshi-s-island-progress-bar)
 for [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/) based on the Nyan Progress Bar by Dmitry Batkovitch. It
 displays Yoshi walking with a dirt block background for the basic bar, and a spinning penguin for indeterminate tasks.
 <!-- Plugin description end -->
