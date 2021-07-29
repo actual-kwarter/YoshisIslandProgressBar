@@ -5,11 +5,11 @@ import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
-import sun.swing.SwingUtilities2;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
+import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -204,11 +204,11 @@ public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
 
         if (progressBar.getOrientation() == SwingConstants.HORIZONTAL) {
             g2.setColor(getSelectionBackground());
-            SwingUtilities2.drawString(progressBar, g2, progressString,
+            BasicGraphicsUtils.drawString(progressBar, g2, progressString,
                     renderLocation.x, renderLocation.y);
             g2.setColor(getSelectionForeground());
             g2.clipRect(fillStart, y, amountFull, h);
-            SwingUtilities2.drawString(progressBar, g2, progressString,
+            BasicGraphicsUtils.drawString(progressBar, g2, progressString,
                     renderLocation.x, renderLocation.y);
         } else {
             g2.setColor(getSelectionBackground());
@@ -217,11 +217,11 @@ public class YoshisIslandProgressBarUi extends BasicProgressBarUI {
             g2.setFont(progressBar.getFont().deriveFont(rotate));
             renderLocation = getStringPlacement(g2, progressString,
                     x, y, w, h);
-            SwingUtilities2.drawString(progressBar, g2, progressString,
+            BasicGraphicsUtils.drawString(progressBar, g2, progressString,
                     renderLocation.x, renderLocation.y);
             g2.setColor(getSelectionForeground());
             g2.clipRect(x, fillStart, w, amountFull);
-            SwingUtilities2.drawString(progressBar, g2, progressString,
+            BasicGraphicsUtils.drawString(progressBar, g2, progressString,
                     renderLocation.x, renderLocation.y);
         }
         g2.setClip(oldClip);
