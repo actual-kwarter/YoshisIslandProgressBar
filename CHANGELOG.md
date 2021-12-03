@@ -2,6 +2,10 @@
 
 # Yoshi's Island Progress Bar Changelog
 
+## [1.1.2] - 2021-12-03
+### Fixed
+- Updated `plugin.xml` for IntelliJ 213
+
 ## [1.1.1] - 2021-07-28
 ### Fixed
 - Updated `plugin.xml` for IntelliJ 212
