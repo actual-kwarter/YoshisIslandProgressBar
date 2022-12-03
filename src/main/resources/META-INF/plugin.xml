@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.github.actualkwarter.yoshisislandprogressbar</id>
     <name>Yoshi's Island Progress Bar</name>
-    <version>1.1.4</version>
+    <version>1.1.5</version>
     <vendor>actual-kwarter</vendor>
 
     <description><![CDATA[
